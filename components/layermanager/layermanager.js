@@ -1,6 +1,7 @@
 import hsLayermanagerService from 'hs.layermanager.service';
 import hsLayermanagerWMSTservice from 'hs.layermanager.WMSTservice';
 import hsLayermanagerLayerlistDirective from 'hs.layermanager.layerlistDirective';
+import hsLayermanagerSelectionService from 'hs.layermanager.selection.service';
 import { Style, Icon, Stroke, Fill, Circle, RegularShape } from 'ol/style';
 import {transform, get as getProj, METERS_PER_UNIT} from 'ol/proj';
 import VectorLayer from 'ol/layer/Vector';
@@ -835,3 +836,4 @@ angular.module('hs.layermanager', ['hs.map', 'hs.utils', 'dndLists', 'hs.status_
 hsLayermanagerLayerlistDirective.init();
 hsLayermanagerService.init();
 hsLayermanagerWMSTservice.init();
+hsLayermanagerSelectionService.init();
