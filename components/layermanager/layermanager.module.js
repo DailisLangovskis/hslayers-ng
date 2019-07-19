@@ -9,6 +9,7 @@ import layermanagerService from './layermanager.service';
 import folderDirective from './layermanager-folder.directive';
 import removeAllDialogDirective from './remove-all-dialog.directive';
 import layermanagerComponent from './layermanager.component';
+import layermanagerSelectionService from './hs.layermanager-selection.service';
 
 /**
  * @ngdoc module
@@ -63,6 +64,14 @@ angular.module('hs.layermanager', ['hs.map', 'hs.utils', 'dndLists', 'hs.save-ma
      * @description Service for core layers management. Maintain layer management structures and connect layer manager with map.Automatically update manager when layer is added or removed from map.
      */
     .service("hs.layermanager.service", layermanagerService)
+
+   /**
+    * @module hs.layermanager
+    * @name hs.layermanager-selection.service
+    * @ngdoc service
+    * @description Adding select interaction to specified layers
+    */
+    .service("hs.layermanager-selection.service", layermanagerSelectionService)
 
     /**
      * @module hs.layermanager

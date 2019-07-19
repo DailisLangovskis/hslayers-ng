@@ -1,14 +1,5 @@
-<<<<<<< HEAD:components/layermanager/layermanager.js
-import hsLayermanagerService from 'hs.layermanager.service';
-import hsLayermanagerWMSTservice from 'hs.layermanager.WMSTservice';
-import hsLayermanagerLayerlistDirective from 'hs.layermanager.layerlistDirective';
-import hsLayermanagerSelectionService from 'hs.layermanager.selection.service';
-import { Style, Icon, Stroke, Fill, Circle, RegularShape } from 'ol/style';
-import {transform, get as getProj, METERS_PER_UNIT} from 'ol/proj';
-=======
 import { Stroke, Fill, Circle, RegularShape } from 'ol/style';
 import { transform, get as getProj, METERS_PER_UNIT } from 'ol/proj';
->>>>>>> develop:components/layermanager/layermanager.component.js
 import VectorLayer from 'ol/layer/Vector';
 import { Vector } from 'ol/source';
 import { TileWMS } from 'ol/source';
@@ -727,14 +718,5 @@ export default {
 
             $scope.$emit('scope_loaded', "LayerManager");
         }
-<<<<<<< HEAD:components/layermanager/layermanager.js
-    ]);
-
-hsLayermanagerLayerlistDirective.init();
-hsLayermanagerService.init();
-hsLayermanagerWMSTservice.init();
-hsLayermanagerSelectionService.init();
-=======
     ]
 }
->>>>>>> develop:components/layermanager/layermanager.component.js
