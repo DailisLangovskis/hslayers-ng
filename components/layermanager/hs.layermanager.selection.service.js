@@ -50,24 +50,24 @@ export default {
                         filter: function(feature, layer) {
                             if(layer.values_.selectable){
                                 if (layer.values_.selectable.multi === true){
-                                    return layer.values_.selectable.possibility == true ;
+                                    return layer.values_.selectable.enabled == true ;
                                 }
                                 else if (layer.values_.selectable.multi == false){
                                     if (me.multiFalseStored[layer.ol_uid]) {
 
                                         if (me.multiFalseStored[layer.ol_uid] == feature){
                                             delete me.multiFalseStored[layer.ol_uid];
-                                            return layer.values_.selectable.possibility == true ;
+                                            return layer.values_.selectable.enabled == true ;
                                         }
                                         else {
                                             me.selectedFeatures.remove(me.multiFalseStored[layer.ol_uid]);
                                             me.multiFalseStored[layer.ol_uid] = feature;
-                                            return layer.values_.selectable.possibility == true ;
+                                            return layer.values_.selectable.enabled == true ;
                                         }
                                     }
                                     else {
                                         me.multiFalseStored[layer.ol_uid] = feature;
-                                        return layer.values_.selectable.possibility == true ;
+                                        return layer.values_.selectable.enabled == true ;
                                     }
 
                                 }
@@ -84,6 +84,7 @@ export default {
                         OlMap.map.getLayers().forEach(layer => {
                             if (layer.values_.selectable !== undefined){
                                 OlMap.map.addInteraction(me.selector);
+                                console.log(OlMap)
                                 return
                             }
                         });
