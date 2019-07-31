@@ -24,26 +24,27 @@ export default ['$rootScope', 'hs.map.service','config',
             condition: click,
             toggleCondition: click,
             filter: function(feature, layer) {
-                if(layer.values_.selectable){
-                    if (layer.values_.selectable.multi === true){
-                        return layer.values_.selectable.enabled == true ;
+                if(layer.get('selectable')){
+                    if (layer.get('selectable').multi === true){
+                        return layer.get('selectable').enabled == true ;
                     }
-                    else if (layer.values_.selectable.multi == false){
+                    else if (layer.get('selectable').multi == false){
                         if (me.multiFalseStored[layer.ol_uid]) {
 
                             if (me.multiFalseStored[layer.ol_uid] == feature){
                                 delete me.multiFalseStored[layer.ol_uid];
-                                return layer.values_.selectable.enabled == true ;
+                                return layer.get('selectable').enabled == true;
                             }
                             else {
-                                me.selectedFeatures.remove(me.multiFalseStored[layer.ol_uid]);
+                                me.selectedFeatures.remove(
+                                    me.multiFalseStored[layer.ol_uid]);
                                 me.multiFalseStored[layer.ol_uid] = feature;
-                                return layer.values_.selectable.enabled == true ;
+                                return layer.get('selectable').enabled == true;
                             }
                         }
                         else {
                             me.multiFalseStored[layer.ol_uid] = feature;
-                            return layer.values_.selectable.enabled == true ;
+                            return layer.get('selectable').enabled == true;
                         }
 
                     }
